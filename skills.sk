@@ -1,0 +1,24 @@
+import:
+    org.bukkit.event.server.TabCompleteEvent
+    java.util.ArrayList
+
+
+
+on TabCompleteEvent:
+    set {_input::*} to event.getBuffer() split at " "
+    
+    if 1st element of {_input::*} is "/skills":
+        if all players contain 2st element of {_input::*}:
+            if amount of {_input::*} is 3:
+
+                set {_list} to new ArrayList()
+                {_list}.add("golem")
+                {_list}.add("witch")
+                {_list}.add("herolanding")
+
+                event.setCompletions({_list})
+
+
+
+command /skills [<player>] [<text>]:
+    trigger:
